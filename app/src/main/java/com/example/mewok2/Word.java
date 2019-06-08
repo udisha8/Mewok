@@ -5,17 +5,17 @@ public class Word {
     private int NO_IMAGE_PROVIDED = -1, imageResourceID = NO_IMAGE_PROVIDED;
     private int audioResourceID;
 
-    public Word(String e, String m, int imageid,int audioID) {
+    public Word(String e, String m, int imageid, int audioID) {
         engWord = e;
         mewokWord = m;
         imageResourceID = imageid;
-        audioResourceID=audioID;
+        audioResourceID = audioID;
     }
 
-    public Word(String e, String m,int audioID) {
+    public Word(String e, String m, int audioID) {
         engWord = e;
         mewokWord = m;
-        audioResourceID=audioID;
+        audioResourceID = audioID;
     }
 
     public String getMewokWord() {
@@ -30,8 +30,7 @@ public class Word {
         return imageResourceID;
     }
 
-    public int getAudioResourceID()
-    {
+    public int getAudioResourceID() {
         return audioResourceID;
     }
 
