@@ -22,7 +22,7 @@ public class NumberActivity extends AppCompatActivity {
 
         ArrayList<Word> words = new ArrayList<Word>();
 
-        words.add(new Word("One","Lutti",R.drawable.number_one));
+        words.add(new Word("One","Lutti",R.drawable.number_one,R.raw.number_one));
         words.add(new Word("Two","Otiiko",R.drawable.number_two));
         words.add(new Word("Three","tolookosu",R.drawable.number_three));
         words.add(new Word("Four","oyyisa",R.drawable.number_four));

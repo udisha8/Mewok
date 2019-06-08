@@ -1,6 +1,7 @@
 package com.example.mewok2;
 
 import android.app.Activity;
+import android.media.MediaPlayer;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,8 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class WordAdapter extends ArrayAdapter<Word> {
+
+    MediaPlayer mediaPlayer;
 
     public WordAdapter(Activity context, ArrayList<Word> wo) {
         super(context, 0, wo);
@@ -39,7 +42,11 @@ public class WordAdapter extends ArrayAdapter<Word> {
         } else
             imageView.setVisibility(View.GONE);
 
+
+
         return listItemView;
+
+
 
 
     }
