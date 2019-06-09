@@ -10,6 +10,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 public class FamilyActivity extends AppCompatActivity {
+    MediaPlayer mediaPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +40,7 @@ public class FamilyActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Word word = words.get(position);
-                final MediaPlayer mediaPlayer = MediaPlayer.create(FamilyActivity.this, word.getAudioResourceID());
+                mediaPlayer = MediaPlayer.create(FamilyActivity.this, word.getAudioResourceID());
                 mediaPlayer.start();
                 if (mediaPlayer != null)
                     mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
@@ -50,5 +51,16 @@ public class FamilyActivity extends AppCompatActivity {
                     });
             }
         });
+    }
+    @Override
+    protected void onStop() {
+        super.onStop();
+        releaseMediaPlayer();
+    }
+    private void releaseMediaPlayer()
+    {
+        if(mediaPlayer!=null)
+            mediaPlayer.release();
+        mediaPlayer=null;
     }
 }

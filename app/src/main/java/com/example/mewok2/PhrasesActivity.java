@@ -13,6 +13,8 @@ import java.util.ArrayList;
 
 public class PhrasesActivity extends AppCompatActivity {
 
+    MediaPlayer mediaPlayer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +43,7 @@ public class PhrasesActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Word word = words.get(position);
-                final MediaPlayer mediaPlayer = MediaPlayer.create(PhrasesActivity.this, word.getAudioResourceID());
+                mediaPlayer = MediaPlayer.create(PhrasesActivity.this, word.getAudioResourceID());
                 mediaPlayer.start();
                 if (mediaPlayer != null)
                     mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
@@ -52,5 +54,17 @@ public class PhrasesActivity extends AppCompatActivity {
                     });
             }
         });
+    }
+    @Override
+    protected void onStop() {
+        super.onStop();
+        releaseMediaPlayer();
+
+    }
+    private void releaseMediaPlayer()
+    {
+        if(mediaPlayer!=null)
+            mediaPlayer.release();
+        mediaPlayer=null;
     }
 }
