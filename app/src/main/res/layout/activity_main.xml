@@ -13,7 +13,7 @@
         android:background="@color/category_numbers"
         android:text="@string/category_numbers"
         android:layout_marginBottom="8dp"
-        android:onClick="numberClick"/>
+        android:onClick="numberClick" />
 
     <TextView
         android:id="@+id/family"
