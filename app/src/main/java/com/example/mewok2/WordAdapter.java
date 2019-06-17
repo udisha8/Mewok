@@ -1,8 +1,6 @@
 package com.example.mewok2;
 
 import android.app.Activity;
-import android.media.MediaPlayer;
-import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
