@@ -14,6 +14,8 @@ import java.util.ArrayList;
 public class PhrasesActivity extends AppCompatActivity {
 
     MediaPlayer mediaPlayer;
+    final ArrayList<Word> words = new ArrayList<Word>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +23,6 @@ public class PhrasesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_phrases);
 
 
-        final ArrayList<Word> words = new ArrayList<Word>();
 
         words.add(new Word("Where are you going?", "minto wuksus", R.raw.phrase_where_are_you_going));
         words.add(new Word("What is your name?", "tinnә oyaase'nә", R.raw.phrase_what_is_your_name));
